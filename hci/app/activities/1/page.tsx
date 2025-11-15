@@ -14,7 +14,7 @@ export default function Index() {
 In spite of shared spaces are an integral part of socialisation and networking for students, they may become a source of hardship for both housing management and tenants. Management of shared spaces and definition of the responsibility limits appear to be complicated, with a few hundred people and their guests having unsupervised and unlimited access to the common areas. Lack of organisation led to regular problems with crossbooking, lost track of keys, mess and confusion among the tenants 
 
         </p>
-        <Video src="https://drive.google.com/uc?export=download&id=1jRSn_LnKFgfi6qgVGnYcSOebrHRpOQbE"></Video>
+        <Video src="https://archive.org/download/the-roomer-hci/The%20Roomer%20-%20HCI.mp4"></Video>
       </article>
     </div>
   </div>
