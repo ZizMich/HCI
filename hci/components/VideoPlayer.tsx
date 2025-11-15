@@ -11,24 +11,23 @@ import {
   VideoPlayerTimeRange,
   VideoPlayerVolumeRange,
 } from "@/components/kibo-ui/video-player";
-export default function Video({src="https://stream.mux.com/DS00Spx1CV902MCtPj5WknGlR102V5HFkDe/high.mp4"}:{src:string}){
-    return (
-<VideoPlayer className="overflow-hidden rounded-lg border">
-    <VideoPlayerContent
-      preload="auto"
-      slot="media"
-      src={src}
-    />
-    <VideoPlayerControlBar>
-      <VideoPlayerPlayButton />
-      <VideoPlayerSeekBackwardButton />
-      <VideoPlayerSeekForwardButton />
-      <VideoPlayerTimeRange />
-      <VideoPlayerTimeDisplay showDuration />
-      <VideoPlayerMuteButton />
-      <VideoPlayerVolumeRange />
-    </VideoPlayerControlBar>
-  </VideoPlayer>
-  )
-
+export default function Video({
+  src = "https://stream.mux.com/DS00Spx1CV902MCtPj5WknGlR102V5HFkDe/high.mp4",
+}: {
+  src: string;
+}) {
+  return (
+    <VideoPlayer className="overflow-hidden rounded-lg border">
+      <VideoPlayerContent preload="auto" slot="media" src={src} />
+      <VideoPlayerControlBar>
+        <VideoPlayerPlayButton />
+        <VideoPlayerSeekBackwardButton />
+        <VideoPlayerSeekForwardButton />
+        <VideoPlayerTimeRange />
+        <VideoPlayerTimeDisplay showDuration />
+        <VideoPlayerMuteButton />
+        <VideoPlayerVolumeRange />
+      </VideoPlayerControlBar>
+    </VideoPlayer>
+  );
 }
