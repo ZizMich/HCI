@@ -2,18 +2,16 @@ import Video from "@/components/VideoPlayer";
 import Mess from "@/public/mess.jpg";
 import { ImageZoom } from "@/components/kibo-ui/image-zoom";
 import Image from "next/image";
-import img1 from "@/public/messages/1.jpg";
-import img2 from "@/public/messages/2.jpg";
-import img3 from "@/public/messages/3.jpg";
-import img4 from "@/public/messages/4.jpg";
-import img5 from "@/public/messages/5.jpg";
-import img6 from "@/public/messages/6.jpg";
-import img7 from "@/public/messages/7.jpg";
-import img8 from "@/public/messages/8.jpg";
-import img9 from "@/public/messages/9.jpg";
+import { StoryBoard, ImgItem } from "@/components/Deck";
+const messages = Array.from({ length: 9 }, (_, i) => `/messages/${i + 1}.jpg`);
+const storyBoardItems = Array.from({ length: 5 }, (_, i) => ({
+  id: i + 1,
+  src: `/storyboard/${i + 1}.jpg`,
+  title: `Message ${i + 1}`,
+}));
 import Marq from "@/components/Marquee";
+
 export default function Index() {
-  const images = [img1, img2, img3, img3, img4, img5, img6, img7, img8, img9];
   return (
     <div className="flex-column">
       <div className="flex justify-center items-start overflow-y-auto p-4 bg-gray-50">
@@ -21,6 +19,7 @@ export default function Index() {
           <h1 className="text-3xl font-bold text-center mb-4">
             Activity 1 - Problem Definition
           </h1>
+
           <p className="text-gray-700 leading-relaxed">
             As the world of education becomes more open and flexible, student
             accommodations welcome young people all over the World. In the city
@@ -49,19 +48,21 @@ export default function Index() {
               unoptimized
             />
           </ImageZoom>
+
           <p>
             In Lumis Leipzig, one of the newest student residences in Leipzig,
             tenants took matters into their own hands in an attempt to organise
             and set rules for the booking of shared spaces
           </p>
+
           <p>
             Residents of Lumis initiate booking through the WhatsApp group by
             writing down the time and date when they plan to occupy the space.
             However, such practice has shown accuracy problems, as well as
             difficulty with tracking the current booking situation of each room
-            in a consistent flow of messages{" "}
+            in a consistent flow of messages
           </p>
-          <Marq images={images}></Marq>
+          <Marq images={messages}></Marq>
           <p>
             Another side that struggles because of the disorganisation of common
             spaces is housing management. Some leasing agreements clearly state
@@ -73,6 +74,10 @@ export default function Index() {
           </p>
 
           <Video src="https://archive.org/download/the-roomer-hci/The%20Roomer%20-%20HCI.mp4"></Video>
+          <StoryBoard
+            style={{ justifySelf: "center" }}
+            imgs={storyBoardItems}
+          ></StoryBoard>
         </article>
       </div>
     </div>

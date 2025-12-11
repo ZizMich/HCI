@@ -9,7 +9,7 @@ import {
 import { ImageZoom } from "./kibo-ui/image-zoom";
 import Image from "next/image";
 
-const Marq = ({ images }: { images: StaticImageData[] }) => (
+const Marq = ({ images }: { images: string[] }) => (
   <div className="flex size-full items-center justify-center bg-background">
     <Marquee>
       <MarqueeFade side="left" />
@@ -22,7 +22,7 @@ const Marq = ({ images }: { images: StaticImageData[] }) => (
                 style={{ justifySelf: "center" }}
                 alt="Placeholder image"
                 className="h-auto w-96"
-                src={image.src}
+                src={image}
                 unoptimized
                 width={200}
                 height={200}
